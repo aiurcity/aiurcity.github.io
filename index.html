@@ -54,8 +54,7 @@
     }
 
     body.teleprompter-mode header,
-    body.teleprompter-mode .kpi-grid,
-    body.teleprompter-mode #dataHighlightBar {
+    body.teleprompter-mode .category-hero-section {
       display: none !important;
     }
 
@@ -970,17 +969,176 @@
     .badge-category { background: #f1f5f9; color: #475569; }
     .badge-year { background: #f8fafc; color: #64748b; border: 1px solid #cbd5e1; }
     
-    .badge-issue-focus {
+    /* 6-Topic Category Hero Grid */
+    .category-hero-section {
+      margin-bottom: 18px;
+    }
+
+    .hero-all-btn {
+      width: 100%;
+      min-height: 48px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 10px 18px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+      touch-action: manipulation;
+      transition: all 0.2s;
+    }
+
+    .hero-all-btn:hover {
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+    }
+
+    .hero-all-btn.active {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: #1d4ed8;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
+    }
+
+    body.dark-mode .hero-all-btn.active {
+      background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+      border-color: #60a5fa;
+      color: #ffffff;
+    }
+
+    .category-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 1180px) {
+      .category-hero-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .category-hero-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+    }
+
+    .category-hero-card {
+      min-height: 78px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 12px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+      touch-action: manipulation;
+      transition: all 0.18s ease;
+    }
+
+    .category-hero-card:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .category-hero-card.active {
       background: #eff6ff;
-      color: #1e40af;
-      border: 1px solid #bfdbfe;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+    }
+
+    body.dark-mode .category-hero-card.active {
+      background: rgba(37, 99, 235, 0.22);
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+    }
+
+    .hero-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .hero-card-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .hero-cat-count {
+      background: rgba(59, 130, 246, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    body.dark-mode .hero-cat-count {
+      background: rgba(59, 130, 246, 0.25);
+      color: #93c5fd;
+      border-color: rgba(96, 165, 250, 0.4);
+    }
+
+    .hero-card-keywords {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .badge-topic {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      font-weight: 800;
+      font-size: 12.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    body.dark-mode .badge-topic {
+      background: rgba(14, 165, 233, 0.2);
+      color: #7dd3fc;
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .badge-issue-focus {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
       font-weight: 700;
+      font-size: 12.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
     }
 
     body.dark-mode .badge-issue-focus {
-      background: rgba(59, 130, 246, 0.18);
-      color: #93c5fd;
-      border-color: rgba(96, 165, 250, 0.45);
+      background: rgba(239, 68, 68, 0.18);
+      color: #fca5a5;
+      border-color: rgba(248, 113, 113, 0.45);
     }
     
     .card-title {
@@ -988,7 +1146,7 @@
       font-weight: 800;
       color: var(--text-main);
       line-height: 1.4;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     @media (max-width: 768px) {
@@ -1004,32 +1162,50 @@
       flex: 1;
     }
 
-    /* Quick Metric Pills on Card Cover */
-    .quick-metrics-pills {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px dashed var(--border-color);
+    .full-verdict-box {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #fcd34d;
+      border-left: 5px solid #f59e0b;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: calc(16.5px * var(--font-scale));
+      line-height: 1.75;
+      color: var(--text-main);
     }
 
-    @media (max-width: 768px) {
+    body.dark-mode .full-verdict-box {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(251, 191, 36, 0.35);
+      border-left-color: #fbbf24;
+      color: #f1f5f9;
+    }
+
+    /* 3-Card Core Hard Metrics on Card Cover */
+    .quick-metrics-pills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 640px) {
       .quick-metrics-pills {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
     }
 
     .quick-metric-pill {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
-      border-left: 3px solid var(--primary-light);
-      border-radius: 6px;
-      padding: 6px 10px;
+      border-left: 4px solid var(--primary-light);
+      border-radius: 8px;
+      padding: 8px 12px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 2px;
+      gap: 3px;
     }
 
     body.dark-mode .quick-metric-pill {
@@ -1039,17 +1215,17 @@
     }
 
     .quick-pill-label {
-      font-size: calc(12px * var(--font-scale));
+      font-size: calc(12.5px * var(--font-scale));
       font-weight: 700;
       color: var(--text-muted);
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
     .quick-pill-val {
-      font-size: calc(15.5px * var(--font-scale));
+      font-size: calc(20px * var(--font-scale));
       font-weight: 800;
-      color: var(--primary);
-      line-height: 1.25;
+      color: #dc2626;
+      line-height: 1.2;
     }
 
     body.dark-mode .quick-pill-val {
@@ -1057,9 +1233,32 @@
     }
 
     .quick-pill-val small {
-      font-size: calc(12px * var(--font-scale));
+      font-size: calc(12.5px * var(--font-scale));
       font-weight: 600;
       color: var(--text-muted);
+    }
+
+    /* Card Cover Bottom Action Row */
+    .card-cover-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-color);
+      flex-wrap: wrap;
+    }
+
+    .card-expand-hint {
+      font-size: calc(14px * var(--font-scale));
+      font-weight: 800;
+      color: #2563eb;
+      line-height: 1.4;
+    }
+
+    body.dark-mode .card-expand-hint {
+      color: #60a5fa;
     }
 
     /* Debate Bullet List & Highlighter Styles */
@@ -2005,151 +2204,76 @@
       </div>
     </header>
 
-    <!-- KPI Summary Cards (4 Objective Supervision Dimensions) -->
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-title">市政監督與爭議事件總計</div>
-        <div class="kpi-val kpi-blue" id="kpiTotalVal">22</div>
-        <div class="kpi-desc">涵蓋2022–2026重大工安食安、兒少保護、工程採購與核心政見檢驗</div>
+    <!-- 6-Topic Category Hero Grid (Progressive Disclosure First Screen) -->
+    <section class="category-hero-section" id="categoryHeroSection" aria-label="6大民生主題分類導覽">
+      <button type="button" class="hero-all-btn active" id="heroBtnAll" data-filter="all" onclick="selectCategoryHero('all')">
+        <span>📋 顯示全部 <span id="heroAllCountSpan">22</span> 大議題</span>
+      </button>
+      <div class="category-hero-grid" id="categoryHeroGrid">
+        <button type="button" class="category-hero-card" data-filter="topic-food-school" onclick="selectCategoryHero('topic-food-school')">
+          <div class="hero-card-top">
+            <span class="hero-card-title">🍱 食安與校園</span>
+            <span class="hero-cat-count" id="heroCountFoodSchool">4 案</span>
+          </div>
+          <div class="hero-card-keywords">營養午餐8校、寶林案、溪山里水質</div>
+        </button>
+        <button type="button" class="category-hero-card" data-filter="topic-child-welfare" onclick="selectCategoryHero('topic-child-welfare')">
+          <div class="hero-card-top">
+            <span class="hero-card-title">👶 兒少與社福</span>
+            <span class="hero-cat-count" id="heroCountChildWelfare">6 案</span>
+          </div>
+          <div class="hero-card-keywords">剴剴案、女童240天、夏莉絲、社工盜領1200萬</div>
+        </button>
+        <button type="button" class="category-hero-card" data-filter="topic-engineering" onclick="selectCategoryHero('topic-engineering')">
+          <div class="hero-card-top">
+            <span class="hero-card-title">🏗️ 工安與工程</span>
+            <span class="hero-cat-count" id="heroCountEngineering">5 案</span>
+          </div>
+          <div class="hero-card-keywords">基泰大直、大巨蛋漏水、廣慈瀑布、天坑、魚果市場</div>
+        </button>
+        <button type="button" class="category-hero-card" data-filter="topic-traffic-env" onclick="selectCategoryHero('topic-traffic-env')">
+          <div class="hero-card-top">
+            <span class="hero-card-title">🚗 交通與環境</span>
+            <span class="hero-cat-count" id="heroCountTrafficEnv">8 案</span>
+          </div>
+          <div class="hero-card-keywords">內科省33秒、公館圓環、YouBike、砍樹颱風、安鼠之亂</div>
+        </button>
+        <button type="button" class="category-hero-card" data-filter="topic-housing-ltc" onclick="selectCategoryHero('topic-housing-ltc')">
+          <div class="hero-card-top">
+            <span class="hero-card-title">🏠 居住、長照與人口</span>
+            <span class="hero-cat-count" id="heroCountHousingLtc">3 案</span>
+          </div>
+          <div class="hero-card-keywords">人口減6萬與臨托、社宅開工31%、長照500床改公式</div>
+        </button>
+        <button type="button" class="category-hero-card" data-filter="topic-budget-integrity" onclick="selectCategoryHero('topic-budget-integrity')">
+          <div class="hero-card-top">
+            <span class="hero-card-title">💰 預算、政見與誠信</span>
+            <span class="hero-cat-count" id="heroCountBudgetIntegrity">12 案</span>
+          </div>
+          <div class="hero-card-keywords">松機少40公頃、市民上台抄襲、短編450億、京華城、北士科、台智光</div>
+        </button>
       </div>
-      <div class="kpi-card">
-        <div class="kpi-title">🏛️ 蔣市府任內專責案件</div>
-        <div class="kpi-val kpi-blue" id="kpiChiangVal">18 <span style="font-size:16px; font-weight:600;">(82%)</span></div>
-        <div class="kpi-desc">任內發生之急性危機、常態治理爭議與選前政見達成率檢驗</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-title">🔄 跨任期重大工程與弊案</div>
-        <div class="kpi-val" style="color:#7c3aed;" id="kpiBothVal">4 <span style="font-size:16px; font-weight:600;">(18%)</span></div>
-        <div class="kpi-desc">承接前朝契約、減項發包、容積獎勵或動支二備金之跨屆案件</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-title">⚖️ 司法偵審／監院審計查核</div>
-        <div class="kpi-val" style="color:#0284c7;" id="kpiJudicialVal">11 <span style="font-size:16px; font-weight:600;">(50%)</span></div>
-        <div class="kpi-desc">涉及地檢署偵辦起訴、法院判決、監察院糾正調卷或審計部點名改善</div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Aggregate Hard Data Highlight Bar (Default Collapsed for Debate Fast Access) -->
-    <div class="data-highlight-bar collapsed" id="dataHighlightBar">
-      <div class="data-highlight-header" onclick="toggleHighlightBar()">
-        <div style="display:flex; align-items:center; gap:8px;">
-          <span class="data-highlight-icon">📈</span>
-          <h3>蔣萬安市府重大事件關鍵量化數據與處置盤點（全市總量速覽）</h3>
-        </div>
-        <span class="highlight-toggle-hint" id="highlightToggleText">▼ 點擊展開 5 大數據卡</span>
-      </div>
-      <div class="data-highlight-grid" id="dataHighlightGrid">
-        <div class="data-box">
-          <div class="data-box-label">👥 人口流失、傷亡規模與民生衝擊</div>
-          <div class="data-box-val">人口減6萬 / 700+人受害</div>
-          <div class="data-box-desc">北市人口跌至241.8萬（較上任減6萬人）、大直撤離442人、免費午餐上路連爆8校（至天母國中）117+人、兒保逾期303件、夏莉絲累罰235.2萬</div>
-        </div>
-        <div class="data-box">
-          <div class="data-box-label">💰 涉案暴利、追加與財務缺口</div>
-          <div class="data-box-val">670億+ <span class="data-box-unit">元</span></div>
-          <div class="data-box-desc">115年總預算短編 449.5 億（追加463億）、京華城容獎爭議 111.7 億（降為728%）、社宅缺口 53.1+11.2 億、第一魚果市場追加 49.93 億、社工盜領長者 1,200萬</div>
-        </div>
-        <div class="data-box">
-          <div class="data-box-label">⚖️ 司法偵審、審計移送與法規爭議</div>
-          <div class="data-box-val">11 案 <span class="data-box-unit">涉司法/監院/審計</span></div>
-          <div class="data-box-desc">京華城一審判13年（執行17年）、社工江羿潔盜領1200萬收押禁見、剴剴案無期定讞、培諾案28年8月定讞、大直工地主任判4年10月、陳重文判8年6月</div>
-        </div>
-        <div class="data-box">
-          <div class="data-box-label">⏱️ 政見達成率、臨托缺口與失靈時效</div>
-          <div class="data-box-val">社宅開工31% <span class="data-box-unit">/ 長照22%</span></div>
-          <div class="data-box-desc">自建社宅開工量僅柯時期31%、聯醫長照達成率僅22%（改公式降候床數）、臨托總額8小時vs每週4小時（缺口28.2萬小時）、內科僅省2~33秒</div>
-        </div>
-        <div class="data-box">
-          <div class="data-box-label">🏗️ 工程決策、交通衝擊與選戰爭議</div>
-          <div class="data-box-val">松機少40公頃 / 市民上台</div>
-          <div class="data-box-desc">松機AI園區喊300公頃實僅260公頃、市民也上台原始碼抓包參考政策島與刪負評、選前拋都更5099補105人、大巨蛋累罰240萬連B3都漏水</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Filter and Search Toolbar (Compact Sticky War Room Bar) -->
+    <!-- Single-Row Minimalist Search & View Toolbar -->
     <div class="toolbar" id="mainToolbar">
       <div class="toolbar-top">
         <div class="search-wrapper">
           <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" class="search-input" placeholder="即時搜尋：松機260公頃、社工盜領1200萬、市民也上台參考政策島、250萬人口減少6萬、臨托8小時、內科只省2~33秒、都更5099、社宅31%...">
+          <input type="text" id="searchInput" class="search-input" placeholder="輸入關鍵字搜尋：營養午餐、剴剴、大巨蛋、內科33秒、松機260公頃、社工1200萬、市民也上台...">
           <button type="button" id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()" title="清除搜尋關鍵字">✕ 清除</button>
         </div>
         <div class="toolbar-actions">
-          <span class="view-counter-pill toolbar-view-counter" id="toolbarViewCounterPill">🔥 累計查核人次：<span id="toolbarPageViewCount">統計中...</span></span>
           <span id="searchResultCount" class="search-result-count">顯示 22 / 22 筆事件</span>
-          <button type="button" id="teleprompterBtn" class="toggle-all-btn" onclick="toggleTeleprompterMode()" title="直播速查大字模式（隱藏頂部橫幅並放大字級 18%）">
-            <span>📺</span> <span id="teleprompterBtnText">直播速查大字模式</span>
-          </button>
-          <div class="font-scale-group" title="調整字級大小">
-            <button type="button" class="font-scale-btn" onclick="adjustFontScale(-0.08)" aria-label="縮小字級">A-</button>
-            <button type="button" class="font-scale-btn" onclick="adjustFontScale(0.08)" aria-label="放大字級">A+</button>
-          </div>
-          <button type="button" id="toolbarQuickJumpBtn" class="toggle-all-btn" onclick="toggleQuickJumpDrawer()" title="開啟題庫九宮格目錄">
-            <span>⚡</span> <span id="toolbarQuickJumpText">22題速跳</span>
-          </button>
-          <button type="button" id="toggleToolbarFiltersBtn" class="toggle-all-btn" onclick="toggleToolbarFilters()" title="展開或收合熱點與篩選列">
-            <span id="toolbarCollapseIcon">🔼</span> <span id="toolbarCollapseText">收合熱點</span>
+          <button type="button" id="teleprompterBtn" class="toggle-all-btn" onclick="toggleTeleprompterMode()" title="大字閱讀模式（隱藏頂部橫幅並放大字級 18%）">
+            <span>📺</span> <span id="teleprompterBtnText">大字模式</span>
           </button>
           <button type="button" id="darkModeBtn" class="toggle-all-btn" onclick="toggleDarkMode()">
             <span id="darkModeIcon">🌙</span> <span id="darkModeText">深色模式</span>
           </button>
-          <button id="toggleAllBtn" class="toggle-all-btn">
-            <span id="toggleAllIcon">📂</span> <span id="toggleAllText">展開全部細節</span>
+          <button type="button" id="toggleAllBtn" class="toggle-all-btn">
+            <span id="toggleAllIcon">📂</span> <span id="toggleAllText">全部展開</span>
           </button>
-        </div>
-      </div>
-
-      <div class="toolbar-collapsible-rows" id="toolbarCollapsibleRows">
-        <!-- Quick Debate Focus Tags -->
-        <div class="scroll-row-wrapper">
-          <div class="scroll-fade-mask">
-            <div class="quick-tags-row" id="quickTagsRow">
-              <span class="quick-tags-label">🔥 辯論熱點快選：</span>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('population-250w-childcare-8hr-civil-servants')">#250萬人口與8小時臨托</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('neihu-traffic-songshan-airport-ai')">#內科省33秒與都更5099</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('songshan-airport-ai-park-260ha')">#松機遷建縮水40公頃</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('social-worker-1200w-elderly-embezzlement')">#社工盜領長者1200萬</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('citizens-on-stage-plagiarism-censorship')">#市民上台抄襲刪負評</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('social-housing-subsidy-cut')">#社宅開工31%與幸福住宅</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('school-lunch-poisoning')">#免費午餐與校園食安</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('tree-cutting-controversy')">#砍樹標案與颱風撿樹枝</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('jintai-dazhi')">#基泰大直塌陷</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('baolin-tea-room')">#寶林茶室案</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('crying-child-kai')">#剴剴案與兒保延宕</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('dome-leaks')">#大巨蛋漏水</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('core-pacific-city')">#京華城停工爭議</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('beitou-shilin-tech-park')">#北士科輝達與解約</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('peinuo-kindergarten')">#培諾幼兒園案</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('taizhigang-fiber')">#台智光案與陳重文</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('shuanglian-rat-infestation')">#安鼠之亂與南鼠北送</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('youbike-free-30-shortage')">#YouBike無車可借</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('budget-hidden-450-billion')">#短編450億預算</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('gongguan-roundabout-heping-bridge')">#公館圓環與天橋強拆</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('ltc-500-beds-formula-controversy')">#長照500床與改公式</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('charis-daycare-child-abuse')">#夏莉絲幼托兒虐</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('metro-handrail-removal-elderly-fall')">#北捷拆扶手重摔</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('methadone-double-standard-police-raid')">#美沙冬與警執法爭議</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('twin-city-forum-lantern-shanghai')">#雙城論壇與上海燈節</button>
-              <button type="button" class="quick-tag-btn" onclick="jumpToIncident('first-fruit-fish-market-expansion')">#魚果市場百億追加</button>
-            </div>
-          </div>
-          <button type="button" id="wrapTagsBtn" class="wrap-toggle-btn" onclick="toggleTagsWrap()" title="切換標籤單行滑動或全部換行攤開">攤開全部 ▾</button>
-        </div>
-        
-        <div class="scroll-row-wrapper">
-          <div class="scroll-fade-mask">
-            <div class="filter-group" id="filterGroup">
-              <button class="filter-btn active" data-filter="all" id="filterBtnAll">全部事件 (22)</button>
-              <button class="filter-btn" data-filter="group-child-food" id="filterBtnChildFood">👶 兒少與校園食安 (5)</button>
-              <button class="filter-btn" data-filter="group-engineering" id="filterBtnEngineering">🏗️ 工安與重大工程 (4)</button>
-              <button class="filter-btn" data-filter="group-traffic-env" id="filterBtnTrafficEnv">🚗 交通與環境市容 (5)</button>
-              <button class="filter-btn" data-filter="group-welfare" id="filterBtnWelfare">🏠 社宅、長照與人口 (3)</button>
-              <button class="filter-btn" data-filter="group-finance-gov" id="filterBtnFinanceGov">💰 財政、採購與治理 (5)</button>
-              <button class="filter-btn" data-filter="chiang" id="filterBtnChiang">🏛️ 蔣市府專責 (18)</button>
-              <button class="filter-btn" data-filter="both" id="filterBtnBoth">🔄 跨任期案件 (4)</button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -2237,6 +2361,38 @@
     const toggleAllText = document.getElementById('toggleAllText');
     const toggleAllIcon = document.getElementById('toggleAllIcon');
     const mainToolbar = document.getElementById('mainToolbar');
+
+    function getTopicInfo(item) {
+      const id = item.id || '';
+      if (['school-lunch-poisoning', 'baolin-tea-room', 'xishanli-water', 'wanfang-teacher-sexual-harassment'].includes(id)) {
+        return { key: 'topic-food-school', label: '🍱 食安與校園' };
+      }
+      if (['crying-child-kai', 'girl-240-day-delay', 'peinuo-kindergarten', 'child-protection-303-delay', 'charis-daycare-child-abuse', 'social-worker-1200w-elderly-embezzlement'].includes(id)) {
+        return { key: 'topic-child-welfare', label: '👶 兒少與社福' };
+      }
+      if (['jintai-dazhi', 'city-sinkholes', 'dome-leaks', 'guangci-metro-waterfall', 'first-fruit-fish-market-expansion'].includes(id)) {
+        return { key: 'topic-engineering', label: '🏗️ 工安與工程' };
+      }
+      if (['tree-cutting-controversy', 'shenkeng-toxic-fire', 'shuanglian-rat-infestation', 'youbike-free-30-shortage', 'gongguan-smoking-cage', 'gongguan-roundabout-heping-bridge', 'metro-handrail-removal-elderly-fall', 'neihu-traffic-songshan-airport-ai'].includes(id)) {
+        return { key: 'topic-traffic-env', label: '🚗 交通與環境' };
+      }
+      if (['social-housing-subsidy-cut', 'ltc-500-beds-formula-controversy', 'population-250w-childcare-8hr-civil-servants'].includes(id)) {
+        return { key: 'topic-housing-ltc', label: '🏠 居住、長照與人口' };
+      }
+      return { key: 'topic-budget-integrity', label: '💰 預算、政見與誠信' };
+    }
+
+    function selectCategoryHero(filterKey) {
+      currentFilter = filterKey;
+      const allBtn = document.getElementById('heroBtnAll');
+      if (allBtn) {
+        allBtn.classList.toggle('active', filterKey === 'all');
+      }
+      document.querySelectorAll('.category-hero-card').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-filter') === filterKey);
+      });
+      renderIncidents();
+    }
 
     function escapeRegExp(str) {
       return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -2400,7 +2556,7 @@
       const btn = document.getElementById('teleprompterBtn');
       const txt = document.getElementById('teleprompterBtnText');
       if (btn) btn.classList.toggle('teleprompter-active', isTeleprompterMode);
-      if (txt) txt.textContent = isTeleprompterMode ? '退出大字模式' : '直播速查大字模式';
+      if (txt) txt.textContent = isTeleprompterMode ? '退出大字模式' : '大字模式';
       applyFontScale();
     }
 
@@ -2449,19 +2605,12 @@
 
     function updateDashboardCounts() {
       const totalCount = incidents.length;
-      const chiangCount = incidents.filter(i => i.admin === 'chiang').length;
-      const bothCount = incidents.filter(i => i.admin === 'both').length;
-      const judicialCount = incidents.filter(i => i.judicial_audit === true).length;
-
-      const cntChildFood = incidents.filter(i => i.debate_group === 'group-child-food').length;
-      const cntEngineering = incidents.filter(i => i.debate_group === 'group-engineering').length;
-      const cntTrafficEnv = incidents.filter(i => i.debate_group === 'group-traffic-env').length;
-      const cntWelfare = incidents.filter(i => i.debate_group === 'group-welfare').length;
-      const cntFinanceGov = incidents.filter(i => i.debate_group === 'group-finance-gov').length;
-
-      const chiangPct = totalCount > 0 ? Math.round((chiangCount / totalCount) * 100) : 0;
-      const bothPct = totalCount > 0 ? Math.round((bothCount / totalCount) * 100) : 0;
-      const judicialPct = totalCount > 0 ? Math.round((judicialCount / totalCount) * 100) : 0;
+      const cntFoodSchool = incidents.filter(i => getTopicInfo(i).key === 'topic-food-school').length;
+      const cntChildWelfare = incidents.filter(i => getTopicInfo(i).key === 'topic-child-welfare').length;
+      const cntEngineering = incidents.filter(i => getTopicInfo(i).key === 'topic-engineering').length;
+      const cntTrafficEnv = incidents.filter(i => getTopicInfo(i).key === 'topic-traffic-env').length;
+      const cntHousingLtc = incidents.filter(i => getTopicInfo(i).key === 'topic-housing-ltc').length;
+      const cntBudgetIntegrity = incidents.filter(i => getTopicInfo(i).key === 'topic-budget-integrity').length;
 
       document.title = `【10/31 台北市長辯論會】市政攻防事實查核 ＆ ${totalCount}大核心爭點數據總體檢`;
       const ogTitleEl = document.querySelector('meta[property="og:title"]');
@@ -2473,31 +2622,20 @@
       const dsTitleEl = document.getElementById('datasetSectionTitle');
       if (dsTitleEl) dsTitleEl.textContent = `📂 18 大臺北市官方擴充公開資料庫與 ${totalCount} 案實戰應用對照庫`;
 
-      const kpiTotalEl = document.getElementById('kpiTotalVal');
-      if (kpiTotalEl) kpiTotalEl.textContent = totalCount;
-      const kpiChiangEl = document.getElementById('kpiChiangVal');
-      if (kpiChiangEl) kpiChiangEl.innerHTML = `${chiangCount} <span style="font-size:16px; font-weight:600;">(${chiangPct}%)</span>`;
-      const kpiBothEl = document.getElementById('kpiBothVal');
-      if (kpiBothEl) kpiBothEl.innerHTML = `${bothCount} <span style="font-size:16px; font-weight:600;">(${bothPct}%)</span>`;
-      const kpiJudicialEl = document.getElementById('kpiJudicialVal');
-      if (kpiJudicialEl) kpiJudicialEl.innerHTML = `${judicialCount} <span style="font-size:16px; font-weight:600;">(${judicialPct}%)</span>`;
-
-      const btnAll = document.getElementById('filterBtnAll');
-      if (btnAll) btnAll.textContent = `全部事件 (${totalCount})`;
-      const btnChildFood = document.getElementById('filterBtnChildFood');
-      if (btnChildFood) btnChildFood.textContent = `👶 兒少與校園食安 (${cntChildFood})`;
-      const btnEngineering = document.getElementById('filterBtnEngineering');
-      if (btnEngineering) btnEngineering.textContent = `🏗️ 工安與重大工程 (${cntEngineering})`;
-      const btnTrafficEnv = document.getElementById('filterBtnTrafficEnv');
-      if (btnTrafficEnv) btnTrafficEnv.textContent = `🚗 交通與環境市容 (${cntTrafficEnv})`;
-      const btnWelfare = document.getElementById('filterBtnWelfare');
-      if (btnWelfare) btnWelfare.textContent = `🏠 社宅、長照與人口 (${cntWelfare})`;
-      const btnFinanceGov = document.getElementById('filterBtnFinanceGov');
-      if (btnFinanceGov) btnFinanceGov.textContent = `💰 財政、採購與治理 (${cntFinanceGov})`;
-      const btnChiang = document.getElementById('filterBtnChiang');
-      if (btnChiang) btnChiang.textContent = `🏛️ 蔣市府專責 (${chiangCount})`;
-      const btnBoth = document.getElementById('filterBtnBoth');
-      if (btnBoth) btnBoth.textContent = `🔄 跨任期案件 (${bothCount})`;
+      const heroAllSpan = document.getElementById('heroAllCountSpan');
+      if (heroAllSpan) heroAllSpan.textContent = totalCount;
+      const elFood = document.getElementById('heroCountFoodSchool');
+      if (elFood) elFood.textContent = `${cntFoodSchool} 案`;
+      const elChild = document.getElementById('heroCountChildWelfare');
+      if (elChild) elChild.textContent = `${cntChildWelfare} 案`;
+      const elEng = document.getElementById('heroCountEngineering');
+      if (elEng) elEng.textContent = `${cntEngineering} 案`;
+      const elTraf = document.getElementById('heroCountTrafficEnv');
+      if (elTraf) elTraf.textContent = `${cntTrafficEnv} 案`;
+      const elHous = document.getElementById('heroCountHousingLtc');
+      if (elHous) elHous.textContent = `${cntHousingLtc} 案`;
+      const elBudg = document.getElementById('heroCountBudgetIntegrity');
+      if (elBudg) elBudg.textContent = `${cntBudgetIntegrity} 案`;
     }
 
     function getTagClass(tag) {
@@ -2522,6 +2660,7 @@
         let matchFilter = true;
         if (currentFilter === 'chiang') matchFilter = (item.admin === 'chiang');
         else if (currentFilter === 'both') matchFilter = (item.admin === 'both');
+        else if (currentFilter.startsWith('topic-')) matchFilter = (getTopicInfo(item).key === currentFilter);
         else if (currentFilter.startsWith('group-')) matchFilter = (item.debate_group === currentFilter);
 
         let matchSearch = true;
@@ -2562,7 +2701,7 @@
         listContainer.innerHTML = `
           <div class="empty-state-box" style="text-align:center; padding: 40px; background:var(--bg-card); border-radius:10px; border:1px solid var(--border-color); color:var(--text-muted);">
             <p style="font-size:18px; margin-bottom:8px; color:var(--text-main);">查無符合條件的事件</p>
-            <p style="font-size:13px;">請嘗試更換搜尋關鍵字或切換上方的分類篩選標籤</p>
+            <p style="font-size:13px;">請嘗試更換搜尋關鍵字或點擊上方「📋 顯示全部大議題」</p>
           </div>
         `;
         return;
@@ -2573,14 +2712,11 @@
         card.className = `incident-card ${item.debate_group || ''}`;
         card.id = `card-${item.id}`;
 
-        let adminBadgeClass = 'badge-admin-chiang';
-        if (item.admin === 'both') adminBadgeClass = 'badge-admin-both';
+        const topicInfo = getTopicInfo(item);
 
-        let statusBadgeClass = 'badge-issue-focus';
-
-        const quickPillsHtml = (item.key_metrics || []).slice(0, 4).map(m => `
+        const quickPillsHtml = (item.key_metrics || []).slice(0, 3).map(m => `
           <div class="quick-metric-pill">
-            <span class="quick-pill-label">⚡ ${highlightSearchOnly(m.label, searchQuery)}</span>
+            <span class="quick-pill-label">📊 ${highlightSearchOnly(m.label, searchQuery)}</span>
             <span class="quick-pill-val">${highlightSearchOnly(m.val, searchQuery)} <small>${highlightSearchOnly(m.unit, searchQuery)}</small></span>
           </div>
         `).join('');
@@ -2626,23 +2762,18 @@
           <div class="card-header ${allExpanded ? 'open' : ''}" onclick="toggleCard('${item.id}')">
             <div style="flex:1; min-width:0;">
               <div class="card-meta-top">
-                <span class="badge ${adminBadgeClass}">${item.admin_label}</span>
-                <span class="badge badge-year">${item.year}</span>
-                <span class="badge badge-category">${item.category_badge}</span>
-                <span class="badge ${statusBadgeClass}">${item.status_label}</span>
+                <span class="badge badge-topic">${topicInfo.label}</span>
+                <span class="badge badge-issue-focus">${item.status_label}</span>
               </div>
               <div class="card-title">${highlightSearchOnly(item.title, searchQuery)}</div>
-              <div class="card-summary-row">
-                <div class="card-summary-line">
-                  <strong>【⚡ 核心爭點摘要】</strong>${formatDebateText(item.verdict_one_liner, searchQuery)}
-                </div>
-                <div class="card-action-btns">
-                  <button type="button" class="copy-summary-btn" onclick="copyIncidentSummary(event, '${item.id}')">🔥 複製查核小卡（貼到社群/聊天室）</button>
-                  <button type="button" class="copy-summary-btn copy-link-btn" onclick="copyCardLink(event, '${item.id}')">🔗 複製單案連結</button>
-                </div>
-              </div>
               <div class="quick-metrics-pills">
                 ${quickPillsHtml}
+              </div>
+              <div class="card-cover-footer">
+                <span class="card-expand-hint" id="expand-hint-${item.id}">${allExpanded ? '🔼 點擊收合完整對照與公文鐵證 ▴' : '👉 點擊展開：看「應該做到 vs 實際作為」對照、時間軸與公文鐵證 ▾'}</span>
+                <div class="card-action-btns">
+                  <button type="button" class="copy-summary-btn" onclick="copyIncidentSummary(event, '${item.id}')">🔥 複製懶人卡</button>
+                </div>
               </div>
             </div>
             <div class="card-chevron" id="chevron-${item.id}">▼</div>
@@ -2650,21 +2781,21 @@
           
           <div class="card-body ${allExpanded ? 'open' : ''}" id="body-${item.id}" data-active-tab="${allExpanded ? 'all' : 'core'}">
             
-            <!-- Segmented Sub-Tabs inside Card -->
+            <!-- Simplified 3 Intuitive Sub-Tabs inside Card -->
             <div class="card-tabs" id="tabs-${item.id}">
-              <button type="button" class="card-tab-btn ${allExpanded ? '' : 'active'}" data-tab="core" onclick="switchCardTab(event, '${item.id}', 'core')">⚖️ 核心對決</button>
-              <button type="button" class="card-tab-btn" data-tab="flow" onclick="switchCardTab(event, '${item.id}', 'flow')">🗺️ 流程與時間軸</button>
-              <button type="button" class="card-tab-btn" data-tab="measures" onclick="switchCardTab(event, '${item.id}', 'measures')">🛠️ 處置與漏洞</button>
-              <button type="button" class="card-tab-btn" data-tab="evidence" onclick="switchCardTab(event, '${item.id}', 'evidence')">📄 公文與媒體鐵證</button>
-              <button type="button" class="card-tab-btn ${allExpanded ? 'active' : ''}" data-tab="all" onclick="switchCardTab(event, '${item.id}', 'all')">📑 展開全貌</button>
+              <button type="button" class="card-tab-btn ${allExpanded ? '' : 'active'}" data-tab="core" onclick="switchCardTab(event, '${item.id}', 'core')">⚖️ 承諾 vs 現實（必看）</button>
+              <button type="button" class="card-tab-btn" data-tab="flow" onclick="switchCardTab(event, '${item.id}', 'flow')">⏳ 事件時間軸</button>
+              <button type="button" class="card-tab-btn" data-tab="evidence" onclick="switchCardTab(event, '${item.id}', 'evidence')">📄 官方公文與新聞鐵證</button>
             </div>
 
-            <!-- Authority and Statutory Duty Section -->
+            <!-- Full Verdict Summary & Authority and Statutory Duty Section -->
             <div class="detail-section" data-tab-panel="core">
-              <div class="detail-section-title">主管機關與法定職責（依據法規）</div>
-              <div class="authority-box">
-                <strong>🏛️ 台北市權責主管機關：</strong>${highlightSearchOnly(item.department, searchQuery)}<br>
-                <strong style="margin-top:6px; display:inline-block;">📜 法定職責與法律依據：</strong>${formatInlineDebateHighlight(item.statutory_duty, searchQuery)}
+              <div class="full-verdict-box">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+                  <strong style="color:#b45309; font-size:15px;">💡 完整事實摘要（點擊下方分頁可看時間軸與公文鐵證）</strong>
+                  <button type="button" class="copy-summary-btn copy-link-btn" onclick="copyCardLink(event, '${item.id}')">🔗 複製單案連結</button>
+                </div>
+                ${formatDebateText(item.verdict_one_liner, searchQuery)}
               </div>
 
               <!-- Side-by-Side: Should Do vs Actually Did -->
@@ -2684,6 +2815,12 @@
                 <strong>🛠️ 公權力原本可以做到哪？（法律授權工具箱）</strong>
                 ${formatDebateText(item.can_do, searchQuery)}
               </div>
+
+              <div class="detail-section-title" style="margin-top:14px;">主管機關與法定職責（依據法規）</div>
+              <div class="authority-box">
+                <strong>🏛️ 台北市權責主管機關：</strong>${highlightSearchOnly(item.department, searchQuery)}<br>
+                <strong style="margin-top:6px; display:inline-block;">📜 法定職責與法律依據：</strong>${formatInlineDebateHighlight(item.statutory_duty, searchQuery)}
+              </div>
             </div>
 
             <!-- Key Quantitative Metrics Grid -->
@@ -2694,12 +2831,12 @@
               </div>
             </div>
 
-            <!-- Concrete Measures List -->
-            <div class="detail-section" data-tab-panel="measures">
-              <div class="detail-section-title">🛠️ 市府具體處置措施與行政進度（四大具體作為）</div>
-              <ul class="concrete-measures-list">
-                ${measuresHtml}
-              </ul>
+            <!-- Timeline -->
+            <div class="detail-section" data-tab-panel="flow">
+              <div class="detail-section-title">⏳ 事實經過與完整事件發展時間軸</div>
+              <div class="timeline-wrap">
+                ${timelineHtml}
+              </div>
             </div>
 
             <!-- Mermaid Schematic Diagram -->
@@ -2712,17 +2849,17 @@ ${item.mermaid_diagram}
               </div>
             </div>
 
-            <!-- Timeline -->
-            <div class="detail-section" data-tab-panel="flow">
-              <div class="detail-section-title">事實經過與完整事件發展時間軸</div>
-              <div class="timeline-wrap">
-                ${timelineHtml}
-              </div>
+            <!-- Concrete Measures List -->
+            <div class="detail-section" data-tab-panel="evidence">
+              <div class="detail-section-title">🛠️ 市府具體處置措施與行政進度（四大具體作為）</div>
+              <ul class="concrete-measures-list">
+                ${measuresHtml}
+              </ul>
             </div>
 
             <!-- Court & Loophole Analysis -->
-            <div class="detail-section" data-tab-panel="measures">
-              <div class="detail-section-title">司法/訴訟現況與制度漏洞檢驗（真解決 vs 假結案）</div>
+            <div class="detail-section" data-tab-panel="evidence">
+              <div class="detail-section-title">⚖️ 司法/訴訟現況與制度漏洞檢驗（真解決 vs 假結案）</div>
               <div class="litigation-box" style="font-size:calc(16px * var(--font-scale)); line-height:1.75; margin-bottom:10px; background:#fff; padding:12px 14px; border-radius:6px; border:1px solid #e2e8f0;">
                 <strong style="color:#b91c1c;">🏛️ 司法裁判與求償落點：</strong>${formatDebateText(item.litigation, searchQuery)}
               </div>
@@ -2733,7 +2870,7 @@ ${item.mermaid_diagram}
 
             <!-- Evidence Matrix -->
             <div class="detail-section" data-tab-panel="evidence" style="margin-bottom:0;">
-              <div class="detail-section-title">公開資料佐證 & 多方媒體報導查核矩陣</div>
+              <div class="detail-section-title">📄 公開資料佐證 & 多方媒體報導查核矩陣</div>
               <div class="evidence-grid">
                 <div class="evidence-block">
                   <h5>🏛️ 官方公開公文、裁判書與調查報告</h5>
@@ -2818,15 +2955,18 @@ ${item.mermaid_diagram}
     function toggleCard(id) {
       const header = document.querySelector(`#card-${id} .card-header`);
       const body = document.getElementById(`body-${id}`);
+      const hintEl = document.getElementById(`expand-hint-${id}`);
       if (!body || !header) return;
       const isOpen = body.classList.contains('open');
       
       if (isOpen) {
         body.classList.remove('open');
         header.classList.remove('open');
+        if (hintEl) hintEl.textContent = '👉 點擊展開：看「應該做到 vs 實際作為」對照、時間軸與公文鐵證 ▾';
       } else {
         body.classList.add('open');
         header.classList.add('open');
+        if (hintEl) hintEl.textContent = '🔼 點擊收合完整對照與公文鐵證 ▴';
         const activeTab = body.getAttribute('data-active-tab') || 'core';
         if (activeTab === 'flow' || activeTab === 'all') {
           requestAnimationFrame(() => {
@@ -2840,22 +2980,19 @@ ${item.mermaid_diagram}
     toggleAllBtn.addEventListener('click', () => {
       allExpanded = !allExpanded;
       if (allExpanded) {
-        toggleAllText.textContent = '收合全部細節';
+        toggleAllText.textContent = '全部收合';
         toggleAllIcon.textContent = '📁';
         document.querySelectorAll('.card-body').forEach(b => {
           b.classList.add('open');
           b.setAttribute('data-active-tab', 'all');
-          const tabs = b.querySelector('.card-tabs');
-          if (tabs) {
-            tabs.querySelectorAll('.card-tab-btn').forEach(btn => {
-              btn.classList.toggle('active', btn.getAttribute('data-tab') === 'all');
-            });
-          }
         });
         document.querySelectorAll('.card-header').forEach(h => h.classList.add('open'));
+        document.querySelectorAll('.card-expand-hint').forEach(el => {
+          el.textContent = '🔼 點擊收合完整對照與公文鐵證 ▴';
+        });
         observeOpenMermaidDiagrams();
       } else {
-        toggleAllText.textContent = '展開全部細節';
+        toggleAllText.textContent = '全部展開';
         toggleAllIcon.textContent = '📂';
         document.querySelectorAll('.card-body').forEach(b => {
           b.classList.remove('open');
@@ -2868,23 +3005,22 @@ ${item.mermaid_diagram}
           }
         });
         document.querySelectorAll('.card-header').forEach(h => h.classList.remove('open'));
+        document.querySelectorAll('.card-expand-hint').forEach(el => {
+          el.textContent = '👉 點擊展開：看「應該做到 vs 實際作為」對照、時間軸與公文鐵證 ▾';
+        });
       }
     });
 
-    filterGroup.addEventListener('click', (e) => {
-      if (e.target.classList.contains('filter-btn')) {
-        filterGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
-        currentFilter = e.target.getAttribute('data-filter');
-        renderIncidents();
-      }
-    });
-
-    searchInput.addEventListener('focus', () => {
-      if (mainToolbar && mainToolbar.classList.contains('toolbar-compact')) {
-        setToolbarCompact(false);
-      }
-    });
+    if (filterGroup) {
+      filterGroup.addEventListener('click', (e) => {
+        if (e.target.classList.contains('filter-btn')) {
+          filterGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          currentFilter = e.target.getAttribute('data-filter');
+          renderIncidents();
+        }
+      });
+    }
 
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value;
@@ -2966,7 +3102,7 @@ ${item.mermaid_diagram}
       const btn = event.currentTarget;
       const showCopied = () => {
         if (!btn) return;
-        const originalText = '🔥 複製查核小卡（貼到社群/聊天室）';
+        const originalText = '🔥 複製懶人卡';
         btn.textContent = '✅ 已複製！';
         btn.classList.add('copied');
         setTimeout(() => {
@@ -3001,11 +3137,9 @@ ${item.mermaid_diagram}
       currentFilter = 'all';
       searchQuery = '';
       if (searchInput) searchInput.value = '';
-      if (filterGroup) {
-        filterGroup.querySelectorAll('.filter-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.getAttribute('data-filter') === 'all');
-        });
-      }
+      const allBtn = document.getElementById('heroBtnAll');
+      if (allBtn) allBtn.classList.add('active');
+      document.querySelectorAll('.category-hero-card').forEach(btn => btn.classList.remove('active'));
       if (needsReRender) {
         renderIncidents();
       }
